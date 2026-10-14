@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Northwind Brewing — Welcome</title>
+<title>Northwind Brewing: Welcome</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%236b1f2a'/%3E%3Ctext x='8' y='12' font-family='Georgia' font-size='11' fill='%23f5efe2' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E" />
 
 <!-- ============================================================= -->
@@ -49,7 +49,7 @@
   body.dash #welcome{ opacity:0; visibility:hidden; transform:scale(.965); pointer-events:none; }
   body.dash #dashboard{ opacity:1; visibility:visible; transform:none; pointer-events:auto; }
 
-  /* ============ SCREEN 1 — WELCOME ============ */
+  /* ============ SCREEN 1: WELCOME ============ */
   .stage{ position:relative; z-index:2; width:min(700px,100%);
     padding:clamp(26px,4.2vw,52px) clamp(22px,4.5vw,58px); text-align:center;
     border:1px solid rgba(176,141,87,.55); outline:1px solid rgba(176,141,87,.28); outline-offset:7px;
@@ -95,7 +95,7 @@
     font-size:clamp(9.5px,1.3vw,11px); letter-spacing:.34em; text-transform:uppercase;
     color:var(--brass); opacity:.9; animation:rise .9s .96s both; }
 
-  /* ============ SCREEN 2 — DASHBOARD (LIGHT, MULTI-VIEW) ============ */
+  /* ============ SCREEN 2: DASHBOARD (LIGHT, MULTI-VIEW) ============ */
   #dashboard{ background:
       radial-gradient(90% 60% at 50% -8%, rgba(156,47,61,.10), transparent 60%),
       linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%); color:var(--ink); }
@@ -241,7 +241,7 @@
       <p class="kicker">Northwind Brewing</p>
       <h1><span class="l1">Welcome to the</span><span class="l2">Brew Log</span></h1>
       <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
-      <p class="sub">From grain to glass — your <em>brewhouse, fermentation, and
+      <p class="sub">From grain to glass: your <em>brewhouse, fermentation and
         taproom performance</em>, poured into a single living view.</p>
       <a class="enter" id="enterBtn" href="#dashboard" aria-label="Enter the dashboard">
         Enter the dashboard <span class="arrow" aria-hidden="true">→</span></a>
@@ -249,7 +249,7 @@
     </main>
   </section>
 
-  <!-- ============ SCREEN 2 — DASHBOARD ============ -->
+  <!-- ============ SCREEN 2: DASHBOARD ============ -->
   <section class="screen" id="dashboard" aria-hidden="true">
     <div class="panel">
       <nav class="dash-nav">
@@ -277,7 +277,7 @@
 
 <script>
   // =========================================================
-  //  SEEDED DATA — edit these to change every view
+  //  SEEDED DATA: edit these to change every view
   // =========================================================
   const TANKS = [
     { id:'1', name:'West Coast IPA', temp:20, ph:4.3, vol:1240, color:'#b5651d', brix:[14.5,12.6,10.2,7.6,5.4,3.8,3.0] },
@@ -296,11 +296,11 @@
     {label:'Taproom',val:980},{label:'Distribution',val:760},{label:'To-Go / Crowler',val:240},{label:'Online',val:180}
   ];
   const FILINGS = [
-    {report:'TTB F 5130.9 — Brewer\u2019s Report of Operations',period:'Apr 2026',due:'May 15',status:['Filed','ok']},
+    {report:'TTB F 5130.9: Brewer\'s Report of Operations',period:'Apr 2026',due:'May 15',status:['Filed','ok']},
     {report:'TTB Excise Tax (5000.24)',period:'Q1 2026',due:'Apr 14',status:['Filed','ok']},
-    {report:'State Excise — Beer',period:'Apr 2026',due:'May 20',status:['Due','due']},
+    {report:'State Excise: Beer',period:'Apr 2026',due:'May 20',status:['Due','due']},
     {report:'Self-Distribution Report',period:'Apr 2026',due:'May 31',status:['Due','due']},
-    {report:'Label Approval (COLA) — Hazy IPA',period:'Pending',due:'May 8',status:['Overdue','late']}
+    {report:'Label Approval (COLA): Hazy IPA',period:'Pending',due:'May 8',status:['Overdue','late']}
   ];
 
   // ---- tiny DOM + svg helpers ----
@@ -428,9 +428,9 @@
   function factsGrid(){
     const list=[
       ['≈','Sugar → alcohol + CO₂','Yeast ferments the wort sugars into alcohol and the CO₂ that carbonates the beer and throws a foamy krausen.'],
-      ['°P','Gravity falls','Wort starts near 12–16 °Plato and drops to 2–4 °P as the yeast attenuates — that’s the curve above.'],
-      ['🌡','Ales warm, lagers cold','Ales ferment warm (18–22 °C) for fruity esters; lagers stay cold (8–13 °C) for a clean, crisp finish.'],
-      ['⏳','Ferment, then condition','Primary runs ~4–7 days; then the beer conditions or lagers for days to weeks before packaging.']
+      ['°P','Gravity falls','Wort starts near 12 to 16 °Plato and drops to 2 to 4 °P as the yeast attenuates. That\'s the curve above.'],
+      ['🌡','Ales warm, lagers cold','Ales ferment warm (18 to 22 °C) for fruity esters; lagers stay cold (8 to 13 °C) for a clean, crisp finish.'],
+      ['⏳','Ferment, then condition','Primary runs ~4 to 7 days; then the beer conditions or lagers for days to weeks before packaging.']
     ];
     const g=el('div','facts'); list.forEach(f=>{ const d=el('div','fact'); d.appendChild(el('span','ic',f[0]));
       const box=el('div'); box.appendChild(el('h4',null,f[1])); box.appendChild(el('p',null,f[2])); d.appendChild(box); g.appendChild(d); });
@@ -444,7 +444,7 @@
     const avgBrix=TANKS.reduce((s,t)=>s+curBrix(t),0)/TANKS.length;
     const avgTemp=TANKS.reduce((s,t)=>s+t.temp,0)/TANKS.length;
     const totVol=TANKS.reduce((s,t)=>s+t.vol,0);
-    f.appendChild(head('The Fermentation Cellar','Fermentation, live','Live fermenters turning wort into beer — every value is computed from the seeded dataset.'));
+    f.appendChild(head('The Fermentation Cellar','Fermentation, live','Live fermenters turning wort into beer. Every value is computed from the seeded dataset.'));
     f.appendChild(secLabel('Cellar at a glance'));
     f.appendChild(kpiGrid([{lab:'Active FVs',val:String(active)},{lab:'Avg Gravity',val:avgBrix.toFixed(1),unit:'°P'},
       {lab:'Avg Temp',val:avgTemp.toFixed(0),unit:'°C'},{lab:'Total Volume',val:(totVol/1000).toFixed(1),unit:'kL'}]));
@@ -455,7 +455,7 @@
   }
   function vOverview(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Brewery Overview','The year at a glance','A top-line read on the whole brewery — tanks, packaging, revenue, and taproom.'));
+    f.appendChild(head('Brewery Overview','The year at a glance','A top-line read on the whole brewery: tanks, packaging, revenue and taproom.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Active FVs',val:'4'},{lab:'Cases YTD',val:'14.9',unit:'K'},
       {lab:'Revenue YTD',val:'$2.2',unit:'M'},{lab:'Taproom Members',val:'980'}]));
@@ -464,7 +464,7 @@
   }
   function vProduction(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Production','Grain to package','Brewhouse throughput, tanks in work, and packaging output this year.'));
+    f.appendChild(head('Production','Grain to package','Brewhouse throughput, tanks in work and packaging output this year.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Batches Brewed',val:'86'},{lab:'Active Tanks',val:'4'},
       {lab:'Avg Batch',val:'15',unit:'bbl'},{lab:'Cans Packaged',val:'412',unit:'K'}]));
@@ -473,7 +473,7 @@
   }
   function vSales(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Sales & Taproom','Where the beer goes','The taproom leads the mix — pints, distribution, to-go, and online.'));
+    f.appendChild(head('Sales & Taproom','Where the beer goes','The taproom leads the mix: pints, distribution, to-go and online.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Revenue YTD',val:'$2.2',unit:'M'},{lab:'Taproom Share',val:'52',unit:'%'},
       {lab:'Distro Accounts',val:'64'},{lab:'Avg Tab',val:'$34'}]));
@@ -482,7 +482,7 @@
   }
   function vCompliance(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Compliance','TTB & state filings','Federal and state reporting status, excise due, and upcoming deadlines.'));
+    f.appendChild(head('Compliance','TTB & state filings','Federal and state reporting status, excise due and upcoming deadlines.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Reports Filed',val:'11'},{lab:'Excise Due',val:'$9.4',unit:'K'},
       {lab:'Open Tasks',val:'3'},{lab:'States Shipped',val:'28'}]));
